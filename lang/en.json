@@ -3,15 +3,15 @@
         "settings": {
             "remove": {
                 "name": "Remove Effect",
-                "hint": ""
+                "hint": "When enabled, the 'Remove Effect' option will be available."
             },
             "sheet": {
                 "name": "Open Sheet",
-                "hint": ""
+                "hint": "When enabled, the 'Open Sheet' option will be available."
             },
             "chat": {
                 "name": "Send to Chat",
-                "hint": ""
+                "hint": "When enabled, the 'Send to Chat' option will be available."
             }
         },
         "remove": "[Shift + Right Click] Remove effect",
