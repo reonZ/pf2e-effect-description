@@ -2,7 +2,7 @@
 
 ![](./readme/tooltip.webp)
 
-This module simply adds 2 additional clicking options for the `Effects Panel` (top right of the screen):
+This module simply adds additional clicking options for the `Effects Panel` (top right of the screen):
 
 -   `[Shift + Right Click]` will remove the effect entirely (skipping all the counters if any).
 
