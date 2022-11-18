@@ -1,5 +1,20 @@
 {
     "pf2e-effect-description": {
+        "settings": {
+            "remove": {
+                "name": "Remove Effect",
+                "hint": ""
+            },
+            "sheet": {
+                "name": "Open Sheet",
+                "hint": ""
+            },
+            "chat": {
+                "name": "Send to Chat",
+                "hint": ""
+            }
+        },
+        "remove": "[Shift + Right Click] Remove effect",
         "sheet": "[Ctrl + Left Click] Open Sheet",
         "chat": "[Ctrl + Right Click] Send to Chat"
     }
