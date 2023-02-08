@@ -1,10 +1,8 @@
-import { addInstructions, setEvents } from './effect.js'
-import { registerSetting } from './utils/foundry.js'
+import { setModuleID } from '@utils/module'
+import { registerSetting } from '@utils/foundry/settings'
+import { renderEffectsPanel } from './effects'
 
-function refreshEffectsPanel() {
-    const g = /** @type {GamePF2e} */ (game)
-    g.pf2e.effectPanel?.render()
-}
+setModuleID('pf2e-effect-description')
 
 Hooks.once('init', () => {
     registerSetting({
@@ -35,7 +33,8 @@ Hooks.once('init', () => {
     })
 })
 
-Hooks.on('renderEffectsPanel', (/** @type {EffectsPanel} */ panel, /** @type {JQuery} */ $html) => {
-    addInstructions($html)
-    setEvents(panel, $html)
-})
+Hooks.on('renderEffectsPanel', renderEffectsPanel)
+
+function refreshEffectsPanel() {
+    game.pf2e.effectPanel?.render()
+}
