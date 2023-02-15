@@ -1,1 +1,21 @@
-{}
+{
+    "pf2e-effect-description": {
+        "settings": {
+            "sheet": {
+                "name": "Ouvrir la feuille",
+                "hint": "Lorsqu'elle est activée, l'option \"Ouvrir la feuille\" sera disponible."
+            },
+            "chat": {
+                "name": "Envoyer dans la conversation",
+                "hint": "Lorsqu'elle est activée, l'option \"Envoyer dans la discussion\" sera disponible."
+            },
+            "remove": {
+                "name": "Retirer l'effet",
+                "hint": "Lorsqu'elle est activée, l'option \"Retirer l'effet\" sera disponible."
+            }
+        },
+        "remove": "[Shift + Clic droit] Retirer l'effet",
+        "sheet": "[Ctrl + clic gauche] Ouvrir la feuille",
+        "chat": "[Ctrl + Clic droit] Envoyer dans la conversation"
+    }
+}
