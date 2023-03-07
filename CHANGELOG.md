@@ -1,3 +1,7 @@
+# 1.2.0
+
+-   added french localization (thanks to [rectulo](https://github.com/rectulo))
+
 # 1.1.1
 
 -   updated for pf2e version 4.7
