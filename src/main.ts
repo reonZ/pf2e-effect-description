@@ -22,15 +22,6 @@ Hooks.once('init', () => {
         config: true,
         onChange: refreshEffectsPanel,
     })
-
-    registerSetting({
-        name: 'chat',
-        type: Boolean,
-        default: true,
-        scope: 'client',
-        config: true,
-        onChange: refreshEffectsPanel,
-    })
 })
 
 Hooks.on('renderEffectsPanel', renderEffectsPanel)

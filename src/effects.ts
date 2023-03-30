@@ -2,16 +2,27 @@ import { getSetting } from '@utils/foundry/settings'
 import { localize } from '@utils/foundry/localize'
 
 export function renderEffectsPanel(panel: EffectsPanel, html: JQuery) {
-    addInstructions(html)
+    addInstructions(panel, html)
     setEvents(html, panel)
 }
 
-function addInstructions(html: JQuery) {
-    let instructions = ''
-    if (getSetting<boolean>('remove')) instructions += `<p>${localize('remove')}</p>`
-    if (getSetting<boolean>('sheet')) instructions += `<p>${localize('sheet')}</p>`
-    if (getSetting<boolean>('chat')) instructions += `<p>${localize('chat')}</p>`
-    html.find('.instructions').append(instructions)
+function addInstructions(panel: EffectsPanel, html: JQuery) {
+    const effectPanels = html.find('.effect-item').toArray()
+
+    const remove = getSetting<boolean>('remove') ? `<p>${localize('remove')}</p>` : ''
+    const sheet = getSetting<boolean>('sheet') ? `<p>${localize('sheet')}</p>` : ''
+
+    for (const effectPanel of effectPanels) {
+        const id = effectPanel.dataset.itemId as string
+        const effect = panel.actor?.items.get(id) as Embedded<EffectPF2e>
+        if (!effect) continue
+
+        let instructions = ''
+        if (!effect.isLocked && effect.badge && effect.badge.type === 'counter') instructions += remove
+        instructions += sheet
+
+        effectPanel.querySelector('.instructions')!.insertAdjacentHTML('beforeend', instructions)
+    }
 }
 
 function setEvents(html: JQuery, panel: EffectsPanel) {
@@ -22,24 +33,20 @@ function setEvents(html: JQuery, panel: EffectsPanel) {
 }
 
 function onContextMenu(event: Event, panel: EffectsPanel) {
-    const sendToChat = (event as MouseEvent).ctrlKey && getSetting('chat')
-    const remove = (event as MouseEvent).shiftKey && getSetting('remove')
-    if (!sendToChat && !remove) return
+    if (!(event as MouseEvent).shiftKey || !getSetting('remove')) return
 
     const effect = getEffect(event, panel)
-    if (!effect) return
+    if (!effect || effect.isLocked || !effect.badge || effect.badge.type !== 'counter') return
 
     event.preventDefault()
     event.stopPropagation()
     event.stopImmediatePropagation()
 
-    if (sendToChat) effect.toMessage()
-    else effect.delete()
+    effect.delete()
 }
 
 function onClick(event: Event, panel: EffectsPanel) {
-    const openSheet = (event as MouseEvent).ctrlKey && getSetting('sheet')
-    if (!openSheet) return
+    if (!(event as MouseEvent).ctrlKey || !getSetting('sheet')) return
 
     const effect = getEffect(event, panel)
     if (!effect) return
@@ -55,5 +62,5 @@ function getEffect(event: Event, panel: EffectsPanel) {
     const target = (event as MouseEvent).currentTarget as HTMLElement
     const effect = target.closest('.effect-item[data-item-id]') as HTMLElement
     const id = effect.dataset.itemId!
-    return panel.actor?.items.get(id)
+    return panel.actor?.items.get(id) as Embedded<EffectPF2e> | undefined
 }
