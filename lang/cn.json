@@ -1,0 +1,21 @@
+{
+    "pf2e-effect-description": {
+        "settings": {
+            "remove": {
+                "name": "移除效果",
+                "hint": "启用时可以使用“移除效果”选项。"
+            },
+            "sheet": {
+                "name": "打开效果卡",
+                "hint": "启用时可以使用“打开效果卡”选项。"
+            },
+            "chat": {
+                "name": "发送至聊天",
+                "hint": "启用时可以使用“发送至聊天”选项。"
+            }
+        },
+        "remove": "[Shift + 右键] 移除效果",
+        "sheet": "[Ctrl + 左键] 打开效果卡",
+        "chat": "[Ctrl + 右键] 发送至聊天"
+    }
+}
