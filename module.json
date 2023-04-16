@@ -38,7 +38,7 @@
         {
             "lang": "cn",
             "name": "中文（简体）",
-            "path": "lang/cn.json"
+            "path": "lang/zh_Hans.json"
         }
     ],
     "relationships": {
