@@ -1,3 +1,11 @@
+# 1.3.0
+
+-   updated for system version `4.10.0`
+-   removed `send to chat` feature (the system now has it)
+-   now only add the `remove effect` to effects that have badges to avoid having twice the remove feature on other effects
+-   no longer add the `remove effect` to locked effects
+-   added chinese localization (thanks to [sakusenerio](https://github.com/sakusenerio))
+
 # 1.2.0
 
 -   added french localization (thanks to [rectulo](https://github.com/rectulo))

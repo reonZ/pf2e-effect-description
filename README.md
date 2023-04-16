@@ -8,8 +8,6 @@ This module simply adds additional clicking options for the `Effects Panel` (top
 
 -   `[Ctrl + Left Click]` will open the effect sheet, where the description and other options are available.
 
--   `[Ctrl + Right Click]` will send the description of the effect to the chat.
-
 # Settings
 
 Users can enable each option individually in the settings.
