@@ -1,3 +1,7 @@
+# 1.3.1
+
+-   simple chinese localization issue
+
 # 1.3.0
 
 -   updated for system version `4.10.0`
