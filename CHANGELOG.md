@@ -1,3 +1,7 @@
+# 1.3.2
+
+-   added taiwanese mandarin localization
+
 # 1.3.1
 
 -   simple chinese localization issue
