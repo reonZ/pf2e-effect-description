@@ -1,3 +1,7 @@
+# 1.4.0
+
+-   compatible with v11
+
 # 1.3.2
 
 -   added taiwanese mandarin localization
