@@ -1,3 +1,7 @@
+# 1.5.0
+
+-   the `Remove Effect` now also uses the `[Ctrl + Right Click]` because `[Shift + Right Click]` doesn't work on firefox, this won't be displayed in the effect tooltip though
+
 # 1.4.0
 
 -   compatible with v11
