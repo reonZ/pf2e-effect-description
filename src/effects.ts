@@ -33,7 +33,7 @@ function setEvents(html: JQuery, panel: EffectsPanel) {
 }
 
 function onContextMenu(event: Event, panel: EffectsPanel) {
-    if (!(event as MouseEvent).shiftKey || !getSetting('remove')) return
+    if ((!(event as MouseEvent).shiftKey && !(event as MouseEvent).ctrlKey) || !getSetting('remove')) return
 
     const effect = getEffect(event, panel)
     if (!effect || effect.isLocked || !effect.badge || effect.badge.type !== 'counter') return
